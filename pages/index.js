@@ -10,6 +10,9 @@ import {
 } from "@mui/material";
 
 export default function Home(props) {
+  function truncateString(str) {
+    return str.slice(0, 300) + "...";
+  }
   const rss = props.rss;
   return (
     <>
@@ -28,8 +31,8 @@ export default function Home(props) {
                   <Typography gutterBottom variant="h6">
                     {data.title}
                   </Typography>
-                  <Typography noWrap variant="body1">
-                    {data.description}
+                  <Typography variant="body1">
+                    {truncateString(data.description)}
                   </Typography>
                   <br />
                   <Typography variant="subtitle2">{data.pubDate}</Typography>
@@ -62,7 +65,6 @@ export async function getStaticProps() {
     allItems["description"] = $(el).find("description").text();
     allItems["pubDate"] = $(el).find("pubDate").text();
     allItems["link"] = $(el).find("link")["0"].prev.next.next.data.slice(0, -7);
-    allItems["source"] = $(el).find("source").attr("url");
     rss.push(allItems);
     allItems = {};
   });
