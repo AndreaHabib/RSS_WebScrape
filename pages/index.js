@@ -24,7 +24,7 @@ export default function Home(props) {
         <meta charset="UTF-8" />
         <meta name="description" content="Internship postings RSS" />
         <meta name="language" content="en" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
       </Head>
       <Typography className={styles.header} variant="h3">
         Internship Postings
