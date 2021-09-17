@@ -12,30 +12,39 @@ import {
 export default function Home(props) {
   const rss = props.rss;
   return (
-    <div className={styles.container}>
-      {rss.map((data) => {
-        return (
-          <div className={styles.rssContainer} key={data.guid}>
-            <Card>
-              <CardContent>
-                <Typography gutterBottom variant="h6">
-                  {data.title}
-                </Typography>
-                <Typography noWrap variant="body1">
-                  {data.description}
-                </Typography>
-                <Typography variant="subtitle2">{data.pubDate}</Typography>
-              </CardContent>
-              <CardActions>
-                <a href={data.link} target="_blank" rel="noreferrer noopener">
-                  <Button size="small">More Info</Button>
-                </a>
-              </CardActions>
-            </Card>
-          </div>
-        );
-      })}
-    </div>
+    <>
+      <Typography
+        style={{ width: "100vw", textAlign: "center", padding: "10px" }}
+        variant="h3"
+      >
+        Internship Postings
+      </Typography>
+      <div className={styles.container}>
+        {rss.map((data) => {
+          return (
+            <div className={styles.rssContainer} key={data.guid}>
+              <Card style={{ border: "3px solid #1876D1" }}>
+                <CardContent>
+                  <Typography gutterBottom variant="h6">
+                    {data.title}
+                  </Typography>
+                  <Typography noWrap variant="body1">
+                    {data.description}
+                  </Typography>
+                  <br />
+                  <Typography variant="subtitle2">{data.pubDate}</Typography>
+                </CardContent>
+                <CardActions>
+                  <a href={data.link} target="_blank" rel="noreferrer noopener">
+                    <Button size="small">More Info</Button>
+                  </a>
+                </CardActions>
+              </Card>
+            </div>
+          );
+        })}
+      </div>
+    </>
   );
 }
 
