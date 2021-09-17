@@ -19,7 +19,7 @@ export default function Home(props) {
   return (
     <>
       <Head>
-        <title>Internship postings</title>
+        <title>Internship Postings</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta charset="UTF-8" />
         <meta name="description" content="Internship postings RSS" />
