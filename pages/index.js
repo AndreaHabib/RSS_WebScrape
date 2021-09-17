@@ -1,6 +1,7 @@
 import styles from "../styles/Home.module.css";
 import cheerio from "cheerio";
 import axios from "axios";
+import Head from "next/head";
 import {
   Card,
   CardContent,
@@ -17,6 +18,14 @@ export default function Home(props) {
   const rss = props.rss;
   return (
     <>
+      <Head>
+        <title>Internship postings</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta charset="UTF-8" />
+        <meta name="description" content="Internship postings RSS" />
+        <meta name="language" content="en" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      </Head>
       <Typography className={styles.header} variant="h3">
         Internship Postings
       </Typography>
