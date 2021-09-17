@@ -8,6 +8,7 @@ import {
   CardActions,
   Button,
 } from "@mui/material";
+import { ClassNames } from "@emotion/react";
 
 export default function Home(props) {
   function truncateString(str) {
@@ -16,10 +17,7 @@ export default function Home(props) {
   const rss = props.rss;
   return (
     <>
-      <Typography
-        style={{ width: "100vw", textAlign: "center", padding: "10px" }}
-        variant="h3"
-      >
+      <Typography className={styles.header} variant="h3">
         Internship Postings
       </Typography>
       <div className={styles.container}>
@@ -47,6 +45,19 @@ export default function Home(props) {
           );
         })}
       </div>
+      <footer className={styles.footer}>
+        <Typography variant="subtitle2">
+          &copy; COPYRIGHT 2021{" "}
+          <a
+            style={{ textDecoration: "underline" }}
+            rel="noreferrer noopener"
+            target="_blank"
+            href="https://www.csi.cuny.edu/campus-life/student-services/center-career-and-professional-development"
+          >
+            Career Center
+          </a>
+        </Typography>
+      </footer>
     </>
   );
 }
@@ -70,5 +81,6 @@ export async function getStaticProps() {
   });
   return {
     props: { rss },
+    revalidate: 86400,
   };
 }

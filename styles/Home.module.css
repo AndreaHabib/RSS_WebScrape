@@ -7,9 +7,30 @@
   flex-wrap: wrap;
 }
 
+.header {
+  width: 100vw;
+  text-align: center;
+  padding: 15px;
+  color: white;
+  margin-bottom: 20px;
+  background-color: rgb(45, 108, 243);
+  border-bottom: 10px solid rgb(39, 78, 160);
+}
+
 .rssContainer {
   width: 25%;
   margin: 15px;
+}
+
+.footer {
+  border-top: 10px solid rgb(39, 78, 160);
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  color: white;
+  width: 100vw;
+  background-color: rgb(45, 108, 243);
+  padding: 30px;
 }
 
 @media screen and (max-width: 768px) {
