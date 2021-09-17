@@ -65,6 +65,15 @@ export default function Home(props) {
           >
             Career Center
           </a>
+          {"  "}&{"  "}
+          <a
+            href="https://andreahabib.netlify.app/"
+            target="_blank"
+            rel="noreferrer noopener"
+            style={{ textDecoration: "underline" }}
+          >
+            Andrea Habib
+          </a>
         </Typography>
       </footer>
     </>
