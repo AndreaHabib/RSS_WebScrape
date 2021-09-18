@@ -8,7 +8,7 @@ body {
   --thumbBG: rgb(255, 255, 255);
   overflow-x: hidden;
   border-left: 6px solid var(--scrollbarBG);
-  border-right: 3px solid var(--scrollbarBG);
+  border-right: 6px solid var(--scrollbarBG);
 }
 
 body::-webkit-scrollbar {
@@ -25,7 +25,6 @@ body::-webkit-scrollbar-track {
 body::-webkit-scrollbar-thumb {
   background-color: var(--thumbBG);
   border-radius: 6px;
-  border: 3px solid var(--scrollbarBG);
 }
 
 a {
