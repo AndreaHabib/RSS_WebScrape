@@ -2,12 +2,14 @@ import styles from "../styles/Home.module.css";
 import cheerio from "cheerio";
 import axios from "axios";
 import Head from "next/head";
+import React, { useEffect } from "react";
 import {
   Card,
   CardContent,
   Typography,
   CardActions,
   Button,
+  TablePagination,
 } from "@mui/material";
 import { ClassNames } from "@emotion/react";
 
@@ -15,7 +17,25 @@ export default function Home(props) {
   function truncateString(str) {
     return str.slice(0, 300) + "...";
   }
-  const rss = props.rss;
+
+  const [page, setPage] = React.useState(0);
+  const [rowsPerPage, setRowsPerPage] = React.useState(12);
+  const [length, setLength] = React.useState(props.rss.length);
+
+  const handleChangePage = (event, newPage) => {
+    setPage(newPage);
+  };
+
+  const handleChangeRowsPerPage = (event) => {
+    setRowsPerPage(parseInt(event.target.value, 10));
+    setPage(0);
+  };
+
+  const rss = props.rss.slice(
+    page * rowsPerPage,
+    page * rowsPerPage + rowsPerPage
+  );
+
   return (
     <>
       <Head>
@@ -53,6 +73,21 @@ export default function Home(props) {
             </div>
           );
         })}
+      </div>
+      <div>
+        <TablePagination
+          rowsPerPageOptions={[12, 25, 50, 100]}
+          style={{
+            display: "flex",
+            justifyContent: "center",
+          }}
+          component="div"
+          count={length}
+          page={page}
+          onPageChange={handleChangePage}
+          rowsPerPage={rowsPerPage}
+          onRowsPerPageChange={handleChangeRowsPerPage}
+        />
       </div>
       <footer className={styles.footer}>
         <Typography variant="subtitle2">
