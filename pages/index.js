@@ -36,6 +36,10 @@ export default function Home(props) {
     page * rowsPerPage + rowsPerPage
   );
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [page]);
+
   return (
     <>
       <Head>
