@@ -11,7 +11,6 @@ import {
   Button,
   TablePagination,
 } from "@mui/material";
-import { ClassNames } from "@emotion/react";
 
 export default function Home(props) {
   function truncateString(str) {
