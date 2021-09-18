@@ -7,8 +7,6 @@ body {
   --scrollbarBG: rgb(45, 108, 243);
   --thumbBG: rgb(255, 255, 255);
   overflow-x: hidden;
-  border-left: 6px solid var(--scrollbarBG);
-  border-right: 6px solid var(--scrollbarBG);
 }
 
 body::-webkit-scrollbar {
@@ -18,6 +16,8 @@ body::-webkit-scrollbar {
 body {
   scrollbar-width: thin;
   scrollbar-color: var(--thumbBG) var(--scrollbarBG);
+  border-left: 14px solid var(--scrollbarBG);
+  border-right: 14px solid var(--scrollbarBG);
 }
 body::-webkit-scrollbar-track {
   background: var(--scrollbarBG);
@@ -34,4 +34,11 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    border-left: 0;
+    border-right: 0;
+  }
 }
