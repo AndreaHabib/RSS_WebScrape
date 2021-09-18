@@ -7,6 +7,8 @@ body {
   --scrollbarBG: rgb(45, 108, 243);
   --thumbBG: rgb(255, 255, 255);
   overflow-x: hidden;
+  border-left: 5px solid var(--scrollbarBG);
+  border-right: 2px solid var(--scrollbarBG);
 }
 
 body::-webkit-scrollbar {
