@@ -5,6 +5,7 @@
   align-items: center;
   overflow: hidden;
   flex-wrap: wrap;
+  margin-top: 40px;
 }
 
 .header {
@@ -12,7 +13,6 @@
   text-align: center;
   padding: 15px;
   color: white;
-  margin-bottom: 40px;
   background-color: rgb(45, 108, 243);
   border-bottom: 10px solid rgb(39, 78, 160);
 }
